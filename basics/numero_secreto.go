@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"strconv"
-	"time"
 )
 
 // ------------------------------------------------ Jogo número secreto
@@ -12,18 +11,18 @@ import (
 func numeroSecreto() {
 	fmt.Println("Boas vindas ao jogo do número secreto")
 	numeroMaximo := 1000
-	// rand.Seed(time.Now().UnixNano()) deprecated
-	rand.New(rand.NewSource(time.Now().UnixNano()))
+	// rand.Seed(time.Now().UnixNano()) deprecated (Go 1.5 > já prepara p gerador)
+	// rand.New(rand.NewSource(time.Now().UnixNano())) < isso é feito por baixo dos panos
 	numeroSecreto := rand.Intn(numeroMaximo) + 1
 	fmt.Printf("Número secreto (para debug): %d\n", numeroSecreto)
 	var chute int
-	tentativas := 1
+	tentativas := 1 // mesma coisa que var tentativas int = 1
 
 	for {
 		fmt.Printf("Escolha um número entre 1 e %d: ", numeroMaximo)
 		var input string
 		fmt.Scanln(&input)
-		chute, _ = strconv.Atoi(input)
+		chute, _ = strconv.Atoi(input) // basicamente, tudo retorna dois valores (result, err), e _ omite oque eu não quero usar
 
 		if chute == numeroSecreto {
 			break
@@ -51,11 +50,10 @@ func numeroSecreto() {
 	// status := true
 	// numero := 255
 
-	// fmt.Printf("Idade: %d anos\n", idade)
-	// fmt.Printf("Preço: %.2f\n", preco)
-	// fmt.Printf("Nome: %s\n", nome)
-	// fmt.Printf("Status: %t\n", status)
-	// fmt.Printf("Número em hexadecimal: %x\n", numero)
+	// fmt.Printf("Idade: %d anos \n", idade)
+	// fmt.Printf("Preço: %.2f \n", preco)
+	// fmt.Printf("Nome: %s \n", nome)
+	// fmt.Printf("Status: %t \n", status)
+	// fmt.Printf("Número em hexadecimal: %x \n", numero)
 
-	// ------------------------------------------------- struct (Ex. objeto tipado no js)
 }

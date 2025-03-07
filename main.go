@@ -16,9 +16,9 @@ func main() {
 
 	// go get = npm i
 
-	// API com gim...
+	// API com gim:
 
-	loadProdutos() // para persistir os dados
+	loadProdutos()
 
 	router := gin.Default()
 
