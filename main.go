@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"teste/basics"
 	"teste/models"
 
 	"github.com/gin-gonic/gin"
@@ -17,6 +18,8 @@ func main() {
 	// go get = npm i
 
 	// API com gim:
+
+	basics.NumeroSecreto()
 
 	loadProdutos()
 

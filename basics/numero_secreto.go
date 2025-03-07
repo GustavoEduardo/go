@@ -8,7 +8,8 @@ import (
 
 // ------------------------------------------------ Jogo número secreto
 
-func numeroSecreto() {
+// Letra maiúscula para ser acessível fora do pacote
+func NumeroSecreto() {
 	fmt.Println("Boas vindas ao jogo do número secreto")
 	numeroMaximo := 1000
 	// rand.Seed(time.Now().UnixNano()) deprecated (Go 1.5 > já prepara p gerador)
@@ -43,17 +44,17 @@ func numeroSecreto() {
 
 	fmt.Printf("\nIsso aí! Você descobriu o número secreto %d com %d %s.\n\n", numeroSecreto, tentativas, palavraTentativa)
 
-	// ------------------------------------------------ Saída de dados
-	// idade := 30
-	// preco := 19.99
-	// nome := "João"
-	// status := true
-	// numero := 255
+	// ------------------------------------ Saída de dados e valores definidos automaticamente
 
-	// fmt.Printf("Idade: %d anos \n", idade)
-	// fmt.Printf("Preço: %.2f \n", preco)
-	// fmt.Printf("Nome: %s \n", nome)
-	// fmt.Printf("Status: %t \n", status)
-	// fmt.Printf("Número em hexadecimal: %x \n", numero)
+	var (
+		texto     string
+		numero    int
+		flutuante float64
+		booleano  bool
+	)
+
+	exadeximal := 255
+
+	fmt.Printf("%s, %d, %.2f, %t, %x\n\n", texto, numero, flutuante, booleano, exadeximal)
 
 }
