@@ -1,2 +1,0 @@
-validar campos recebidos
-testes funcionais
