@@ -12,8 +12,8 @@ import (
 
 func Get(c *gin.Context) {
 
-	c.JSON(200, gin.H{
-		"produtos": data.Produtos,
+	c.JSON(http.StatusOK, gin.H{
+		"atendimento": data.Atendimentos,
 	})
 
 }
@@ -33,7 +33,7 @@ func GetById(c *gin.Context) {
 
 	}
 
-	for _, p := range data.Produtos {
+	for _, p := range data.Atendimentos {
 		if p.ID == id {
 			c.JSON(http.StatusOK, p)
 			return
@@ -41,36 +41,36 @@ func GetById(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusNotFound, gin.H{
-		"message": "Produto não encontrado!",
+		"message": "Atendimento não encontrado!",
 	})
 
 }
 
 func New(c *gin.Context) {
 
-	var novoProduto models.Produto
+	var novoAtendimento models.Atendimento
 
-	if err := c.ShouldBindJSON(&novoProduto); err != nil {
+	if err := c.ShouldBindJSON(&novoAtendimento); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"erro": err.Error(),
 		})
 		return
 	}
 
-	if err := service.ValidateBody(&novoProduto); err != nil {
+	if err := service.ValidateBody(&novoAtendimento); err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"erro": err.Error()})
 		return
 	}
 
-	novoProduto.ID = len(data.Produtos) + 1
+	novoAtendimento.ID = len(data.Atendimentos) + 1
 
-	data.Produtos = append(data.Produtos, novoProduto)
+	data.Atendimentos = append(data.Atendimentos, novoAtendimento)
 
-	data.SaveProduto()
+	data.SaveAtendimento()
 
 	c.JSON(http.StatusCreated, gin.H{
-		"menssagem": "Inserido com sucesso!",
-		"produto":   novoProduto,
+		"menssagem":   "Inserido com sucesso!",
+		"atendimento": novoAtendimento,
 	})
 
 }
@@ -86,29 +86,29 @@ func Update(c *gin.Context) {
 		return
 	}
 
-	var updatedProduto models.Produto
+	var updatedAtendimento models.Atendimento
 
-	if err := c.ShouldBindJSON(&updatedProduto); err != nil {
+	if err := c.ShouldBindJSON(&updatedAtendimento); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"erro": err.Error()})
 		return
 	}
 
-	if err := service.ValidateBody(&updatedProduto); err != nil {
+	if err := service.ValidateBody(&updatedAtendimento); err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"erro": err.Error()})
 		return
 	}
 
-	for i, p := range data.Produtos {
+	for i, p := range data.Atendimentos {
 		if p.ID == id {
-			data.Produtos[i] = updatedProduto
-			data.Produtos[i].ID = id
-			data.SaveProduto()
-			c.JSON(http.StatusCreated, gin.H{"message": "Editado com sucesso!", "data": data.Produtos[i]})
+			data.Atendimentos[i] = updatedAtendimento
+			data.Atendimentos[i].ID = id
+			data.SaveAtendimento()
+			c.JSON(http.StatusCreated, gin.H{"message": "Editado com sucesso!", "data": data.Atendimentos[i]})
 			return
 		}
 	}
 
-	c.JSON(http.StatusNotFound, gin.H{"message": "Produto não encontrado!"})
+	c.JSON(http.StatusNotFound, gin.H{"message": "Atendimento não encontrado!"})
 
 }
 
@@ -123,16 +123,16 @@ func SoftDelete(c *gin.Context) {
 		return
 	}
 
-	for i, p := range data.Produtos {
+	for i, p := range data.Atendimentos {
 		if p.ID == id {
-			data.Produtos = append(data.Produtos[:i], data.Produtos[i+1:]...) //até o indice i, do indice i+1 e continuar até o fim (:)
-			data.SaveProduto()
+			data.Atendimentos = append(data.Atendimentos[:i], data.Atendimentos[i+1:]...) //até o indice i, do indice i+1 e continuar até o fim (:)
+			data.SaveAtendimento()
 			c.JSON(http.StatusOK, gin.H{"message": "Removido com sucesso!"})
 			return
 		}
 	}
 
-	c.JSON(http.StatusNotFound, gin.H{"message": "Produto não encontrado!"})
+	c.JSON(http.StatusNotFound, gin.H{"message": "Atendimento não encontrado!"})
 
 }
 

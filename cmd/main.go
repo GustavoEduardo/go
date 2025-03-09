@@ -16,15 +16,15 @@ func main() {
 
 	basics.NumeroSecreto()
 
-	data.LoadProdutos()
+	data.LoadAtendimentos()
 
 	router := gin.Default()
 
-	router.GET("/produto", handler.Get)
-	router.GET("/produto/:id", handler.GetById)
-	router.POST("/produto", handler.New)
-	router.PUT("/produto/:id", handler.Update)
-	router.DELETE("/produto/:id", handler.SoftDelete)
+	router.GET("/atendimento", handler.Get)
+	router.GET("/atendimento/:id", handler.GetById)
+	router.POST("/atendimento", handler.New)
+	router.PUT("/atendimento/:id", handler.Update)
+	router.DELETE("/atendimento/:id", handler.SoftDelete)
 
 	router.Run()
 
