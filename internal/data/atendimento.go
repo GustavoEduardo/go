@@ -25,7 +25,6 @@ func LoadAtendimentos() {
 	if err := decoder.Decode(&Atendimentos); err != nil {
 		fmt.Println("Error decoding JSON: ", err)
 	}
-
 }
 
 func SaveAtendimento() {

@@ -12,8 +12,15 @@ import (
 
 func Get(c *gin.Context) {
 
+	if data.Atendimentos == nil {
+		c.JSON(http.StatusOK, gin.H{
+			"atendimentos": []models.Atendimento{},
+		})
+		return
+	}
+
 	c.JSON(http.StatusOK, gin.H{
-		"atendimento": data.Atendimentos,
+		"atendimentos": data.Atendimentos,
 	})
 
 }

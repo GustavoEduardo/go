@@ -1,0 +1,22 @@
+variável "entidade" (para produtividade na criação de cruds)
+conectar banco
+validar campos recebidos
+testes funcionais
+
+Estudar
+protocolo gRPC
+GO routines
+como evitar race condition em GO routines
+
+Lais Lima youtube
+golangSP no mitap.com
+
+Ver:
+https://go.dev/blog/waza-talk
+https://www.youtube.com/watch?v=f6kdp27TYZs
+https://www.linkedin.com/pulse/golang-e-devops-um-guia-para-iniciantes-paulo-roberto/
+https://www.alura.com.br/artigos/conversao-de-tipos-com-go?srsltid=AfmBOop7o4ZrGH6OFF9B2JtBMGYrpQGK3Sq0Yw_jt-JqTQ8s8KTglvDv
+
+Dúvidas:
+Dividirrotas no main (para criar funçõs com o mesm nome, ex. getById)
+Retornar slice quando composição estiver vazia (ex. servicos: null)

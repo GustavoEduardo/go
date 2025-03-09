@@ -6,8 +6,9 @@ package models
 // para retornar como minpusculo usar a referência `json:"nomeDoCampo"`
 
 type Atendimento struct {
-	ID           int     `json:"id"`
-	Descricao    string  `json:"descricao"`
-	Valor        float64 `json:"valor"`
+	ID           int       `json:"id"`
+	Descricao    string    `json:"descricao"`
+	Valor        float64   `json:"valor"`
+	Servico      []Servico `json:"servicos"` // composição
 	campoPrivado string
 }

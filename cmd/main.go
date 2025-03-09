@@ -26,6 +26,8 @@ func main() {
 	router.PUT("/atendimento/:id", handler.Update)
 	router.DELETE("/atendimento/:id", handler.SoftDelete)
 
+	router.POST("/servicos", handler.New)
+
 	router.Run()
 
 }
