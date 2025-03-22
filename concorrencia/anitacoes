@@ -1,0 +1,9 @@
+go mod init nomedoprojeto
+
+go get === npm i
+
+go run build
+
+go run .
+
+go run cmd/main.go

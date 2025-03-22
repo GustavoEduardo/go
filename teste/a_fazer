@@ -18,5 +18,5 @@ https://www.linkedin.com/pulse/golang-e-devops-um-guia-para-iniciantes-paulo-rob
 https://www.alura.com.br/artigos/conversao-de-tipos-com-go?srsltid=AfmBOop7o4ZrGH6OFF9B2JtBMGYrpQGK3Sq0Yw_jt-JqTQ8s8KTglvDv
 
 Dúvidas:
-Dividirrotas no main (para criar funçõs com o mesm nome, ex. getById)
+Dividir rotas no main (para criar funçõs com o mesm nome, ex. getById)
 Retornar slice quando composição estiver vazia (ex. servicos: null)
