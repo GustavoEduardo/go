@@ -2,8 +2,8 @@ package main
 
 import (
 	"buscador/internal/fetcher"
+	"buscador/internal/processor"
 	"fmt"
-	"sync"
 	"time"
 )
 
@@ -11,31 +11,13 @@ func main() {
 
 	start := time.Now()
 
-	var priceMl, priceKb, priceAm float64
-	var wg sync.WaitGroup
+	priceChannel := make(chan float64)
+	done := make(chan bool)
 
-	wg.Add(3)
+	go fetcher.FetchPrices(priceChannel)
+	go processor.ShowPriceAVG(priceChannel, done)
 
-	go func() {
-		defer wg.Done()
-		priceMl = fetcher.FetchProceFromMercadoLivre()
-	}()
-
-	go func() {
-		defer wg.Done()
-		priceKb = fetcher.FetchProceFromKabum()
-	}()
-
-	go func() {
-		defer wg.Done()
-		priceAm = fetcher.FetchProceFromAmericanas()
-	}()
-
-	wg.Wait()
-
-	fmt.Printf("\nR$ %.2f\n", priceMl)
-	fmt.Printf("R$ %.2f\n", priceKb)
-	fmt.Printf("R$ %.2f\n", priceAm)
+	<-done
 
 	fmt.Printf("\nTempo execução: %s\n", time.Since(start))
 

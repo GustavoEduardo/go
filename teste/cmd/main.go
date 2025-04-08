@@ -10,10 +10,6 @@ import (
 
 func main() {
 
-	// go get = npm i
-
-	// API com gim:
-
 	basics.NumeroSecreto()
 
 	data.LoadAtendimentos()
@@ -24,7 +20,7 @@ func main() {
 	router.GET("/atendimento/:id", handler.GetById)
 	router.POST("/atendimento", handler.New)
 	router.PUT("/atendimento/:id", handler.Update)
-	router.DELETE("/atendimento/:id", handler.SoftDelete)
+	router.DELETE("/atendimento/:id", handler.Remove)
 
 	router.POST("/servicos", handler.New)
 

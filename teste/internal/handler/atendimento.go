@@ -119,7 +119,7 @@ func Update(c *gin.Context) {
 
 }
 
-func SoftDelete(c *gin.Context) {
+func Remove(c *gin.Context) {
 
 	idParam := c.Param("id")
 
