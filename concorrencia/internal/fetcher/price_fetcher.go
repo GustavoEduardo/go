@@ -1,16 +1,15 @@
 package fetcher
 
 import (
+	"buscador/internal/models"
 	"math/rand"
 	"sync"
 	"time"
 )
 
-// Buscar preços de sites com RPAs (simular)
-
 // <- canal vai receber dados
 
-func FetchPrices(priceChannel chan<- float64) {
+func FetchPrices(priceChannel chan<- models.PriceDetail) {
 	var wg sync.WaitGroup
 	wg.Add(3)
 
@@ -30,24 +29,38 @@ func FetchPrices(priceChannel chan<- float64) {
 	}()
 
 	wg.Wait()
-	close(priceChannel) // Evita deadlock. Avisa as GO routines que não existe mais valor no canal
+	close(priceChannel) // Evita deadlock. Avisa as GO routines que não existe mais valor para ser lido no canal
 
 }
 
-func FetchProceFromMercadoLivre() float64 {
+// Buscar preços de sites com RPAs (simular)
+
+func FetchProceFromMercadoLivre() models.PriceDetail {
 	time.Sleep(1 * time.Second)
 
-	return rand.Float64() * 100
+	return models.PriceDetail{
+		StoreName: "Mercado Livre",
+		Value:     rand.Float64() * 100,
+		Timetamp:  time.Now(),
+	}
 }
 
-func FetchProceFromKabum() float64 {
+func FetchProceFromKabum() models.PriceDetail {
 	time.Sleep(3 * time.Second)
 
-	return rand.Float64() * 100
+	return models.PriceDetail{
+		StoreName: "Kabum",
+		Value:     rand.Float64() * 100,
+		Timetamp:  time.Now(),
+	}
 }
 
-func FetchProceFromAmericanas() float64 {
+func FetchProceFromAmericanas() models.PriceDetail {
 	time.Sleep(2 * time.Second)
 
-	return rand.Float64() * 100
+	return models.PriceDetail{
+		StoreName: "Americanas",
+		Value:     rand.Float64() * 100,
+		Timetamp:  time.Now(),
+	}
 }
