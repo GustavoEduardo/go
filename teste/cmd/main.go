@@ -22,7 +22,7 @@ func main() {
 	router.PUT("/atendimento/:id", handler.Update)
 	router.DELETE("/atendimento/:id", handler.Remove)
 
-	router.POST("/servicos", handler.New)
+	router.POST("/servicos", handler.Novo)
 
 	router.Run()
 

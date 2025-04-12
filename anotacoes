@@ -7,3 +7,16 @@ go build main.go
 go run .
 
 go run cmd/main.go
+
+--------- Atalhos no editor ---------------
+
+tys -> criar struct
+
+
+--------- Documentação --------------
+
+https://go.dev/tour/methods/1
+https://go.dev/blog/waza-talk
+https://www.youtube.com/watch?v=f6kdp27TYZs
+https://www.linkedin.com/pulse/golang-e-devops-um-guia-para-iniciantes-paulo-roberto/
+https://www.alura.com.br/artigos/conversao-de-tipos-com-go?srsltid=AfmBOop7o4ZrGH6OFF9B2JtBMGYrpQGK3Sq0Yw_jt-JqTQ8s8KTglvDv
