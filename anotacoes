@@ -12,7 +12,6 @@ go run cmd/main.go
 
 tys -> criar struct
 
-
 --------- Documentação --------------
 
 https://go.dev/tour/methods/1
@@ -20,3 +19,11 @@ https://go.dev/blog/waza-talk
 https://www.youtube.com/watch?v=f6kdp27TYZs
 https://www.linkedin.com/pulse/golang-e-devops-um-guia-para-iniciantes-paulo-roberto/
 https://www.alura.com.br/artigos/conversao-de-tipos-com-go?srsltid=AfmBOop7o4ZrGH6OFF9B2JtBMGYrpQGK3Sq0Yw_jt-JqTQ8s8KTglvDv
+
+https://go.dev/tour/welcome/1
+https://go.dev/talks/2012/splash.article
+https://go.dev/blog/declaration-syntax
+https://go.dev/blog/randv2
+https://go.dev/blog/go2-here-we-come
+https://go.dev/blog/errors-are-values
+https://research.swtch.com/interfaces

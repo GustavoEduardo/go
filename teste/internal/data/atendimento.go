@@ -22,6 +22,7 @@ func LoadAtendimentos() {
 
 	decoder := json.NewDecoder(file)
 
+	// & endereço de memória
 	if err := decoder.Decode(&Atendimentos); err != nil {
 		fmt.Println("Error decoding JSON: ", err)
 	}

@@ -3,7 +3,7 @@ package models
 import "fmt"
 
 type Item struct {
-	ID      int
+	ID      string
 	Name    string
 	Quanity int
 	Price   float64
@@ -14,5 +14,5 @@ type Item struct {
 // Por convenção usar a primeira letra do tipo
 
 func (i Item) Info() string {
-	return fmt.Sprintf("ID %d | Descrição: %s | Quantidade: %d | Valor: %.2f ", i.ID, i.Name, i.Quanity, i.Price)
+	return fmt.Sprintf("ID %s | Descrição: %s | Quantidade: %d | Valor: %.2f ", i.ID, i.Name, i.Quanity, i.Price)
 }

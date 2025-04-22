@@ -13,6 +13,7 @@ func Novo(c *gin.Context) {
 
 	var novoAtendimento models.Atendimento
 
+	// & endereço de memória
 	if err := c.ShouldBindJSON(&novoAtendimento); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"erro": err.Error(),
