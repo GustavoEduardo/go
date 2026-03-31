@@ -4,9 +4,7 @@ go get nomedopacote
 
 go build main.go
 
-go run .
-
-go run cmd/main.go
+go run .  OU  go run cmd/main.go
 
 --------- Atalhos no editor ---------------
 
@@ -27,3 +25,24 @@ https://go.dev/blog/randv2
 https://go.dev/blog/go2-here-we-come
 https://go.dev/blog/errors-are-values
 https://research.swtch.com/interfaces
+
+
+Instalar:
+
+1 - Baixar tar.gz no site
+
+2- Extraia para /usr/local
+    sudo tar -C /usr/local -xzf go1.26.1.linux-amd64.tar.gz 
+
+3 - Configurar PATH
+    export PATH=$PATH:/usr/local/go/bin
+
+*Para garantir, abrir nano ~/.bashrc e adicionar na última linha
+    export PATH=$PATH:/usr/local/go/bin
+
+4 -  Aplicar
+    source ~/.bashrc
+
+5 - Testar
+    which go
+    go version
