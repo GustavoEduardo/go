@@ -2,6 +2,8 @@ go mod init nomedoprojeto
 
 go get nomedopacote
 
+go mod tidy ???
+
 go build main.go (ou . )
 
 go run .  OU  go run cmd/main.go
