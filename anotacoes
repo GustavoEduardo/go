@@ -2,7 +2,7 @@ go mod init nomedoprojeto
 
 go get nomedopacote
 
-go build main.go
+go build main.go (ou . )
 
 go run .  OU  go run cmd/main.go
 
@@ -27,7 +27,7 @@ https://go.dev/blog/errors-are-values
 https://research.swtch.com/interfaces
 
 
-Instalar:
+Instalar -------------------------------------------------------------
 
 1 - Baixar tar.gz no site
 
@@ -46,3 +46,22 @@ Instalar:
 5 - Testar
     which go
     go version
+
+
+Debug ----------------------------------------------------------------
+
+go install github.com/go-delve/delve/cmd/dlv@latest
+
+nano ~/.bashrc
+
+add no final: export PATH=$PATH:$HOME/go/bin
+
+nano ~/.bashrc
+
+Verificar com dlv version
+
+No Vscode
+Ctrl + Shift + P → Go: Install/Update Tools
+e marcar dlv
+
+-------------------------------------------

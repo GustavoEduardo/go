@@ -2,7 +2,7 @@ package services
 
 import "fmt"
 
-// implementação de interfaces  em GO é implicita
+// implementação de interfaces em GO é implicita
 
 type InfoService interface {
 	GetInfo() string

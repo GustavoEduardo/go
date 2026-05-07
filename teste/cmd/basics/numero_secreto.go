@@ -15,15 +15,15 @@ func NumeroSecreto() {
 	// rand.Seed(time.Now().UnixNano()) deprecated (Go 1.5 > já prepara op gerador)
 	// rand.New(rand.NewSource(time.Now().UnixNano())) < isso é feito por baixo dos panos
 	numeroSecreto := rand.Intn(numeroMaximo) + 1
-	fmt.Printf("Número secreto (para debug): %d\n", numeroSecreto)
-	tentativas := 1 // mesma coisa que var tentativas int = 1
+	// fmt.Printf("Número secreto (para debug): %d\n", numeroSecreto)
+	tentativas := 1 // igual a var tentativas int = 1
 
 	for {
 		fmt.Printf("Escolha um número entre 1 e %d: ", numeroMaximo)
 		var input string
 		fmt.Scanln(&input)
 
-		chute, err := strconv.Atoi(input) // basicamente, tudo retorna dois valores (result, err), e _ omite oque eu não quero usar
+		chute, err := strconv.Atoi(input) // basicamente, quase tudo retorna dois valores (result, err), e _ omite oque eu não quero usar
 
 		if chute == numeroSecreto {
 			break
@@ -35,7 +35,8 @@ func NumeroSecreto() {
 		} else {
 
 			if chute > numeroSecreto {
-				fmt.Printf("O número secreto é menor que %d\n", chute)
+				fmt.Println("O número secreto é menor que ", chute)
+				// fmt.Printf("O número secreto é menor que %d\n", chute)
 			} else {
 				fmt.Printf("O número secreto é maior que %d\n", chute)
 			}
