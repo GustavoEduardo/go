@@ -2,7 +2,15 @@ go mod init nomedoprojeto
 
 go get nomedopacote
 
-go mod tidy ???
+go mod tidy -> instala pacotes importados
+
+-> mesmo se o repositório sumir do gitub, a versão que estou usando ainda estará salva no google
+
+
+**Ainda funciona?.. Criar um pagote no github com funções e utilizar
+Ex. "github.com/gustavo/golangtools"
+
+go mod vendor -> baixa os pacotes com as versões do go.mod
 
 go build main.go (ou . )
 
